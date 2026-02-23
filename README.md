@@ -40,16 +40,12 @@ Anomalies are detected **at token-level**, enabling precise identification of fa
 ## SHAP + LLM Explainability
 
 ### SHAP +  Example
-![SHAP ](shap_output.png)
+![SHAP ](SHAP image.png)
 
 - 🔴 **Red tokens** → anomaly drivers (*failed*, *blocked*)  
 - 🔵 **Blue tokens** → normal behavior reinforcement
   
 - LLM transforms SHAP output into **concise human-readable explanations**  
-
-### SHAP + LLM Example
-
-![SHAP + LLM](shap_llm_output.png)
 
 ---
 
@@ -58,9 +54,9 @@ Anomalies are detected **at token-level**, enabling precise identification of fa
 - Retrieves top-K semantically similar historical logs  
 - LLM synthesizes retrieved logs to provide **context-aware explanations**  
 
-### RAG + LLM Example
+###SHAP+LLM and RAG + LLM Example
 
-![RAG + LLM](rag_llm_output.png)
+![RAG + LLM](SHAP,RAG,LLM.png)
 
 ---
 
@@ -70,7 +66,7 @@ Anomalies are detected **at token-level**, enabling precise identification of fa
 - `labelmap.json` – Token-ID mapping  
 - `config.json` – Model & hyperparameters  
 - `tokenizer/` – Preprocessing utilities  
-- XAI + LLM + RAG explanation modules  
+- XAI + LLM , RAG + LLM explanation modules  
 
 ---
 
