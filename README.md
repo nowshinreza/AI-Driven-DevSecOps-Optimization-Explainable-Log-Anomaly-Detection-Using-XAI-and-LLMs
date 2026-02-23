@@ -1,83 +1,82 @@
-# AI-Driven DevSecOps Test-Phase Optimization  
-### Token-Level Log Anomaly Detection with LogBERT, XAI, and LLMs
+# AI-Driven DevSecOps Test-Phase Optimization
+### Token-Level Log Anomaly Detection with LogBERT, XAI, RAG, and LLMs
 
-This project focuses on **token-wise anomaly detection during the DevSecOps test phase**, covering CI/CD testing, security scans, build verification, and monitoring logs.
+This project focuses on **token-wise anomaly detection during the DevSecOps test phase**, covering CI/CD testing, security scans, build verification, and monitoring logs.  
 
-The pipeline combines **LogBERT** for learning sequential log patterns, **SHAP (XAI)** for transparent token-level explanations, and **LLMs** for human-readable root-cause analysis of test-phase failures and security events.
+The pipeline combines:  
+- **LogBERT** – Learns sequential log patterns  
+- **SHAP (XAI)** – Token-level interpretability  
+- **RAG** – Context-aware retrieval of historical logs  
+- **LLMs** – Human-readable root-cause explanations and remediation guidance  
 
+---
 
+## DevSecOps Test-Phase Focus
 
-##  DevSecOps Test-Phase Focus
-
-The system analyzes logs generated during:
-- Unit and Integration Testing  
-- Functional and Regression Testing  
-- CI/CD Build and Test Execution  
+The system analyzes logs generated during:  
+- Unit & Integration Testing  
+- Functional & Regression Testing  
+- CI/CD Build and Deployment  
 - Static & Dynamic Security Testing  
-- Vulnerability and Dependency Scanning  
-- Intrusion Detection and Monitoring  
+- Vulnerability & Dependency Scanning  
+- Intrusion Detection & Monitoring  
 
-Anomalies are detected **at token level**, enabling precise identification of failed test steps, security violations, and pipeline breakdowns.
+Anomalies are detected **at token-level**, enabling precise identification of failed steps, security violations, and pipeline breakdowns.  
 
+---
 
+## LogBERT-Based Token-wise Detection
 
-##  LogBERT-Based Token-wise Detection
+- Captures sequential and contextual log patterns  
+- Flags deviations indicating test failures or security events  
+- Transformer encoder with multi-head self-attention, optimized via cross-entropy  
 
-LogBERT is trained to learn:
-- Sequential execution patterns in test-phase logs  
-- Contextual dependencies across heterogeneous log types  
-- Abnormal deviations indicating testing or security failures  
-
-The model uses transformer encoder layers with multi-head self-attention and is optimized using cross-entropy loss while ignoring padding tokens.
-
-### Training Performance Across Test-Phase Datasets
+### Training Performance
 
 ![LogBERT Evaluation](Logbert_evaluation.png)
 
 ---
 
-##  SHAP Token-Level Explainability
+## SHAP + LLM Explainability
 
-SHAP is applied to interpret LogBERT predictions at **token granularity**.
+### SHAP +  Example
+![SHAP ](shap_output.png)
 
-- 🔴 **Red tokens** → drive anomaly detection (e.g., *failed*, *unauthorized*, *blocked*)  
-- 🔵 **Blue tokens** → reinforce normal behavior  
-- Sequence-level scores summarize overall risk  
+- 🔴 **Red tokens** → anomaly drivers (*failed*, *blocked*)  
+- 🔵 **Blue tokens** → normal behavior reinforcement
+  
+- LLM transforms SHAP output into **concise human-readable explanations**  
 
-### SHAP Heatmap for Test-Phase Logs
+### SHAP + LLM Example
 
-![SHAP Heatmap](Shap_headmap.png)
+![SHAP + LLM](shap_llm_output.png)
 
+---
 
+## RAG + LLM Contextual Reasoning
 
-##  LLM-Based Test-Phase Explanation
+- Retrieves top-K semantically similar historical logs  
+- LLM synthesizes retrieved logs to provide **context-aware explanations**  
 
-LLMs transform SHAP-attributed tokens into **concise, test-phase–aware explanations**, identifying whether anomalies originate from:
-- Failed test cases  
-- Security scans and access violations  
-- CI/CD build or deployment errors  
+### RAG + LLM Example
 
-### LLM Token-Level Explanation Example
+![RAG + LLM](rag_llm_output.png)
 
-![LLM Sample Output](LLM_sample%20output.png)
-
-
+---
 
 ## Key Components
 
-- `model_final.pt` – Trained LogBERT model  
-- `labelmap.json` – Token-to-ID mapping  
-- `config.json` – Architecture & hyperparameters  
-- `tokenizer/` – Log preprocessing utilities  
-- XAI and LLM explanation modules  
+- `model_final.pt` – Trained LogBERT  
+- `labelmap.json` – Token-ID mapping  
+- `config.json` – Model & hyperparameters  
+- `tokenizer/` – Preprocessing utilities  
+- XAI + LLM + RAG explanation modules  
 
+---
 
+## DevSecOps Value
 
-##  DevSecOps Value
-
-- Precise **token-wise anomaly detection**  
-- Clear explanations for **test failures and security issues**  
+- Precise **token-level anomaly behaviour explaination**  
+- Clear, actionable **explanations** for test failures and security events  
 - Faster **root-cause analysis** in CI/CD pipelines  
-- Improved reliability, security, and transparency  
-
-
+- Enhanced **reliability, security, and transparency**
