@@ -1,5 +1,5 @@
 # AI-Driven DevSecOps Test-Phase Optimization
-### Token-Level Log Anomaly Detection with LogBERT, XAI, RAG, and LLMs
+### Token-Level Log Anomaly Behaviour Detection with LogBERT, XAI, RAG, and LLMs
 
 This project focuses on **token-wise anomaly detection during the DevSecOps test phase**, covering CI/CD testing, security scans, build verification, and monitoring logs.  
 
