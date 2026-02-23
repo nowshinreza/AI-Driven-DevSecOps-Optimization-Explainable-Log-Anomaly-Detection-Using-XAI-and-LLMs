@@ -54,7 +54,7 @@ Anomalies are detected **at token-level**, enabling precise identification of fa
 - Retrieves top-K semantically similar historical logs  
 - LLM synthesizes retrieved logs to provide **context-aware explanations**  
 
-###SHAP+LLM and RAG + LLM Example
+### SHAP+LLM and RAG + LLM Example
 
 ![RAG + LLM](SHAP,RAG,LLM.png)
 
