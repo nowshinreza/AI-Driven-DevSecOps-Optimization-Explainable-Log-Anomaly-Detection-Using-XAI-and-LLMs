@@ -40,7 +40,7 @@ Anomalies are detected **at token-level**, enabling precise identification of fa
 ## SHAP + LLM Explainability
 
 ### SHAP +  Example
-![SHAP ](SHAP image.png)
+![SHAP ](SHAP_image.png)
 
 - 🔴 **Red tokens** → anomaly drivers (*failed*, *blocked*)  
 - 🔵 **Blue tokens** → normal behavior reinforcement
